@@ -1,0 +1,25 @@
+apply plugin: 'war'
+
+apply plugin: 'jetty'
+
+jettyRun.contextPath = '/'
+
+String springVersion = '4.0.6.RELEASE'
+
+configurations {
+    provided
+}
+
+dependencies {
+
+    compile project(':core')
+
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    runtime 'javax.servlet:jstl:1.2'
+
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3'
+
+}

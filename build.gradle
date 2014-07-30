@@ -1,0 +1,46 @@
+
+
+allprojects {
+
+    apply plugin: 'groovy'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    String springVersion = '4.0.6.RELEASE'
+
+    //ext.springVersion = springVersion
+
+    dependencies {
+
+        compile "org.codehaus.groovy:groovy-all:2.3.3"
+        compile 'org.slf4j:slf4j-api:1.7.5'
+
+        compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+        compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+        compile group: 'org.springframework', name: 'spring-context', version: springVersion
+        compile group: 'org.springframework', name: 'spring-context-support', version: springVersion
+        compile group: 'org.springframework', name: 'spring-core', version: springVersion
+        compile group: 'org.springframework', name: 'spring-expression', version: springVersion
+        compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+        compile group: 'org.springframework', name: 'spring-orm', version: springVersion
+        compile group: 'org.springframework', name: 'spring-tx', version: springVersion
+        compile group: 'org.springframework', name: 'spring-jms', version: springVersion
+        compile group: 'org.springframework', name: 'spring-test', version: springVersion
+
+
+        testCompile "junit:junit:4.11"
+    }
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
+
+
+
